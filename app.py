@@ -88,7 +88,7 @@ def gpt_webhook_consult():
         )
 
     if response:
-        message_content = response.choices[0].message['content']
+        message_content = response.choices[0].message.content
         if send_message(meta_token, phone_number_id, phone_number, message_content):
             return make_response(jsonify({"message": "Success"}), 200)
 
